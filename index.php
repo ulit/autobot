@@ -24,3 +24,4 @@
 //}
 //$response=$bot->replyMessage($replyToken, $textMessageBuilder); break;
 echo "OK...";
+?>
