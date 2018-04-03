@@ -28,10 +28,9 @@ if (!is_null($events['events'])) {
                     $response=$bot->replyMessage($replyToken, $textMessageBuilder);
                     break;
             }
-            }
         }
     }
 }
 
-echo "Test end 010";
+echo "Test end 011";
 ?>
