@@ -11,14 +11,17 @@ $channel_secret = 'a5c0adcfff271a2f3235f7a50033de3e';
 //Get message from Line API
 $content = file_get_contents('php://input');
 $events=json_decode($content, true);
+echo "Test 001";
 if (!is_null($events['events'])) {
+    echo "Test 002";
     foreach($events['events']as $event){
+        echo "Test 003";
         // Line API send a lot of event type, we interested in message only.
         if ($event['type'] == 'message') {
-
+            echo "Test 004";
         }
     }
 }
 
-echo "Test 007";
+echo "Test end";
 ?>
