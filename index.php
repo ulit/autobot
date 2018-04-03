@@ -19,9 +19,20 @@ if (!is_null($events['events'])) {
         // Line API send a lot of event type, we interested in message only.
         if ($event['type'] == 'message') {
             echo "Test 004";
+            switch($event['message']['type']) {
+                case 'text':
+                    $replyToken = $event['replyToken']; //Reply message
+                    $respMessage='Hello, your message is '.$event['message']['text'];
+                    $httpClient=newCurlHTTPClient($channel_token);
+                    $bot=newLINEBot($httpClient, array('channelSecret'=> $channel_secret));
+                    $textMessageBuilder=newTextMessageBuilder($respMessage);
+
+                    $response=$bot->replyMessage($replyToken, $textMessageBuilder);
+                    break;
+            }
         }
     }
 }
 
-echo "Test end";
+echo "Test end 001";
 ?>
