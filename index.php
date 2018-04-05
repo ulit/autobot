@@ -23,8 +23,8 @@ if (!is_null($events['events'])) {
                 case 'text':
                     $replyToken = $event['replyToken']; //Reply message
                     $respMessage='Hello, your message is '.$event['message']['text'];
-                    $httpClient=newCurlHTTPClient($channel_token);
-                    $bot=newLINEBot($httpClient, array('channelSecret'=> $channel_secret));
+                    $httpClient= new CurlHTTPClient($channel_token);
+                    $bot= new LINEBot($httpClient, array('channelSecret'=> $channel_secret));
                     $textMessageBuilder=newTextMessageBuilder($respMessage);
 
                     $response=$bot->replyMessage($replyToken, $textMessageBuilder);
