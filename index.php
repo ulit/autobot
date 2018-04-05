@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
                     $respMessage='Hello, your message is '.$event['message']['text'];
                     $httpClient= new CurlHTTPClient($channel_token);
                     $bot= new LINEBot($httpClient, array('channelSecret'=> $channel_secret));
-                    $textMessageBuilder=newTextMessageBuilder($respMessage);
+                    $textMessageBuilder= new TextMessageBuilder($respMessage);
 
                     $response=$bot->replyMessage($replyToken, $textMessageBuilder);
                     break;
@@ -34,5 +34,5 @@ if (!is_null($events['events'])) {
     }
 }
 
-echo "Test end 011";
+echo "Test end 012";
 ?>
